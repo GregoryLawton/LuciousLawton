@@ -1,60 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>Greg Lawton</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Lucious Lawton — actor and singer. Film & television work, music releases, and booking inquiries.">
+  <meta name="theme-color" content="#0a0705">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Lucious Lawton</title>
 </head>
 <body>
-    <div class="grid-2">
-        <div class="section-1">
-            <img src="img/logo.png" width="110" height="73" alt="Jal Irani Logo"/>
-            <h2>Greg Lawton</h2>
-            <p>Towson, MD</p>
-            <a href="https://www.linkedin.com/in/gregllawton"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/gregorylawton"><i class="fab fa-github"></i></a>
-            <a href="mailto:greglawton9@gmail.com"><i class="fas fa-envelope"></i></a>  
 
-        </div>
-        <div class="section-2">
-            <h2>About</h2>
-            <p>Gregory is scheduled to graduate from Towson University with a Bachelor of Science degree in Computer Science in Spring 2026. Upon completing his studies at Towson University and earning his degree, Gregory plans to contribute his expertise and dedication to the workforce. His academic achievements and practical experiences have prepared him to make a meaningful impact where he plans to secure a position as a Software Engineer within a reputable and growing company in the tech industry. Gregory is confident that his passion, determination, and commitment to excellence will make him a valuable asset to any organization he joins, and he looks forward to the opportunities that lie ahead in his career
-            </p>
-            <h2>Courses Taken</h2>
-            <ul class="book">
-                <li>COSC 484: Web Programming</li>
-                <li>COSC 442: Softare Quality Assurance and Testing</li>
-                <li>COSC 436: Object Oriented Design and Programming</em></li>
-                <li>COSC 435: Mobile Application Development (Apple/Swift)</li>
-                <li>MATH 314: Cryptography</li>
-                <li>COSC 457: Database Management</li>
-                <li>COSC 432: Requirements Analysis & Modeling</li>
-            </ul>
+  <!-- ============ Ambient grain / vignette layer ============ -->
+  <div class="grain" aria-hidden="true"></div>
 
-            <h2>Projects</h2>
-            <h4>Below are some of my previous projects & class labs (Git Repositories) 💻</h4>
-            <ul class="phone">
-                <li><u><a href="https://github.com/GregoryLawton/StudyAir.git">StudyAir</a></u>(Group project developed using Node.js, React, Firebase, Concurrently, & Vite)</li>
-                <li><u><a href="https://github.com/GregoryLawton/admin-arsenal.git">Admin Arsenal</a></u>(Group project developed using Node.js & React)</li>
-                <li><u><a href="https://github.com/GregoryLawton/Tiger-Eats.git">Tiger Eats</a></u>(Solo project developed using Swift & Firebase)</li>
-            </ul>
-            
-            <h2>Info</h2>
-            <ul class="paper">
-                <li><u><a href="Gregory Lawton Resume (CS).pdf">Resume</a></u></li>
-            </ul>
+  <!-- ============ Nav toggle (top left) ============ -->
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
 
-            <h2>Interests</h2>
-            <p>Aside from web development and software engineering, I make music as an artist and my debut ep is coming out in 2026. You can find my artist page here to check out my visual and short clips @ <u><a href="https://instagram.com/zyonbriggz">Zyon Briggz</a></u></p>
-        </div>
+  <div class="wordmark-mini">LUCIOUS&nbsp;LAWTON</div>
+
+  <!-- ============ Full screen drawer nav ============ -->
+  <nav class="site-nav" id="siteNav" aria-hidden="true">
+    <ul class="site-nav__links">
+      <li><a href="#home" data-nav-link>Home</a></li>
+      <li><a href="#reel" data-nav-link>Film &amp; Television</a></li>
+      <li><a href="#music" data-nav-link>Music</a></li>
+      <li><a href="#gallery" data-nav-link>Gallery</a></li>
+      <li><a href="#inquire" data-nav-link>Inquire</a></li>
+    </ul>
+
+    <div class="bulb-rule" aria-hidden="true"></div>
+
+    <ul class="site-nav__social">
+      <li><a href="https://instagram.com/luciouslawton" target="_blank" rel="noopener" aria-label="Lucious Lawton on Instagram"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://tiktok.com/@luciouslawton" target="_blank" rel="noopener" aria-label="Lucious Lawton on TikTok"><i class="fab fa-tiktok"></i></a></li>
+      <li><a href="https://twitter.com/luciouslawton" target="_blank" rel="noopener" aria-label="Lucious Lawton on Twitter"><i class="fab fa-twitter"></i></a></li>
+    </ul>
+  </nav>
+  <div class="nav-scrim" id="navScrim"></div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="home">
+    <!-- EDIT: replace with your main intro photo at img/hero.jpg (portrait, min 1400px tall looks best) -->
+    <div class="hero__image" style="background-image:url('img/hero.jpg');"></div>
+    <div class="hero__spotlight" id="spotlight" aria-hidden="true"></div>
+    <div class="hero__scrim"></div>
+
+    <div class="hero__content">
+      <p class="eyebrow reveal">Actor &middot; Singer</p>
+      <h1 class="hero__title">
+        <span class="reveal" style="--d:1">Lucious</span>
+        <span class="reveal hero__title--em" style="--d:2">Lawton</span>
+      </h1>
+      <p class="hero__tagline reveal" style="--d:3">On screen. In the booth. Always in character.</p>
     </div>
+
+    <a href="#reel" class="scroll-cue" aria-label="Scroll to content">
+      <span></span>
+    </a>
+  </header>
+
+  <main>
+
+    <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
+
+    <!-- ============ FILM & TELEVISION ============ -->
+    <section class="section" id="reel">
+      <div class="section__head reveal-up">
+        <p class="eyebrow">Filmography</p>
+        <h2>On Screen</h2>
+      </div>
+
+      <!-- EDIT: duplicate .reel-card for each project. Poster art goes in img/reel/ -->
+      <div class="reel-grid">
+        <article class="reel-card reveal-up">
+          <div class="reel-card__poster" style="background-image:url('img/reel/project-1.jpg');">
+            <span class="reel-card__tag">Feature Film</span>
+          </div>
+          <div class="reel-card__body">
+            <h3>Project Title</h3>
+            <p class="reel-card__meta">Role &middot; Year</p>
+            <p class="reel-card__desc">A short line on the project and the part played.</p>
+          </div>
+        </article>
+
+        <article class="reel-card reveal-up">
+          <div class="reel-card__poster" style="background-image:url('img/reel/project-2.jpg');">
+            <span class="reel-card__tag">Television</span>
+          </div>
+          <div class="reel-card__body">
+            <h3>Project Title</h3>
+            <p class="reel-card__meta">Role &middot; Year</p>
+            <p class="reel-card__desc">A short line on the project and the part played.</p>
+          </div>
+        </article>
+
+        <article class="reel-card reveal-up">
+          <div class="reel-card__poster" style="background-image:url('img/reel/project-3.jpg');">
+            <span class="reel-card__tag">Short Film</span>
+          </div>
+          <div class="reel-card__body">
+            <h3>Project Title</h3>
+            <p class="reel-card__meta">Role &middot; Year</p>
+            <p class="reel-card__desc">A short line on the project and the part played.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
+
+    <!-- ============ MUSIC ============ -->
+    <section class="section" id="music">
+      <div class="section__head reveal-up">
+        <p class="eyebrow">Discography</p>
+        <h2>In Studio</h2>
+      </div>
+
+      <!-- EDIT: duplicate .track-card for each release. Cover art goes in img/music/ -->
+      <div class="track-list">
+        <a class="track-card reveal-up" href="#" target="_blank" rel="noopener">
+          <div class="track-card__art" style="background-image:url('img/music/release-1.jpg');"></div>
+          <div class="track-card__info">
+            <h3>Release Title</h3>
+            <p class="track-card__meta">Single &middot; 2026</p>
+          </div>
+          <span class="track-card__play"><i class="fas fa-play"></i></span>
+        </a>
+
+        <a class="track-card reveal-up" href="#" target="_blank" rel="noopener">
+          <div class="track-card__art" style="background-image:url('img/music/release-2.jpg');"></div>
+          <div class="track-card__info">
+            <h3>Debut EP</h3>
+            <p class="track-card__meta">EP &middot; Coming 2026</p>
+          </div>
+          <span class="track-card__play"><i class="fas fa-play"></i></span>
+        </a>
+      </div>
+
+      <p class="section__note reveal-up">More releases coming soon &mdash; follow along on Instagram and TikTok.</p>
+    </section>
+
+    <!-- ============ QUOTE ============ -->
+    <section class="quote-panel">
+      <div class="quote-panel__mark" aria-hidden="true">&ldquo;</div>
+      <!-- EDIT: swap in your favorite quote and its attribution -->
+      <blockquote class="reveal-up">
+        <p>Add your favorite quote here.</p>
+        <cite>&mdash; Attribution</cite>
+      </blockquote>
+    </section>
+
+    <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section" id="gallery">
+      <div class="section__head reveal-up">
+        <p class="eyebrow">Photography</p>
+        <h2>Gallery</h2>
+      </div>
+
+      <!-- EDIT: drop photos into img/gallery/ and update the filenames below (add or remove figures freely) -->
+      <div class="gallery-grid">
+        <figure class="gallery-item reveal-up"><img src="img/gallery/01.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-item reveal-up"><img src="img/gallery/02.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-item reveal-up"><img src="img/gallery/03.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-item reveal-up"><img src="img/gallery/04.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-item reveal-up"><img src="img/gallery/05.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-item reveal-up"><img src="img/gallery/06.jpg" alt="" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
+
+    <!-- ============ INQUIRE ============ -->
+    <section class="section section--inquire" id="inquire">
+      <div class="section__head reveal-up">
+        <p class="eyebrow">Booking &amp; Press</p>
+        <h2>Inquire about Lucious</h2>
+        <p class="section__lede">For bookings, features, and collaborations, share the details below.</p>
+      </div>
+
+      <!--
+        EDIT: this form opens the visitor's email client addressed to LuciousLawton@gmail.com
+        with their details pre-filled, so no backend or account is required.
+
+        For a form that submits silently (no email client popup), create a free
+        endpoint at https://formspree.io using LuciousLawton@gmail.com, then:
+          1. Change the <form> action below to your Formspree endpoint
+          2. Change the method to "POST"
+          3. Delete the id="inquireForm" JS mailto handler in script.js
+      -->
+      <form class="inquire-form reveal-up" id="inquireForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="company">Company / Production</label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        <div class="field">
+          <label for="details">Details of inquiry</label>
+          <textarea id="details" name="details" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-gold">
+          <span>Send Inquiry</span>
+        </button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="bulb-rule" aria-hidden="true"></div>
+    <p class="wordmark-mini wordmark-mini--footer">LUCIOUS LAWTON</p>
+    <ul class="footer-social">
+      <li><a href="https://instagram.com/luciouslawton" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://tiktok.com/@luciouslawton" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+      <li><a href="https://twitter.com/luciouslawton" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="year"></span> Lucious Lawton. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
