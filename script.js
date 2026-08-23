@@ -79,43 +79,36 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ---------------------------------------------------------
-     Inquiry form -> opens a pre-filled email to
-     LuciousLawton@gmail.com (no backend required).
-
-     To switch to a silent form submission instead of opening
-     the visitor's email client, point the <form> at a
-     Formspree endpoint and remove this handler — see the
-     comment above the form in index.html.
+     Inquiry form
   --------------------------------------------------------- */
   const form = document.getElementById('inquireForm');
-  const status = document.getElementById('formStatus');
-  const INQUIRY_EMAIL = 'luciouslawton@gmail.com';
+const status = document.getElementById('formStatus');
 
-  /*if (form){
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Sending...';
 
-      const name    = form.name.value.trim();
-      const company = form.company.value.trim();
-      const email   = form.email.value.trim();
-      const phone   = form.phone.value.trim();
-      const details = form.details.value.trim();
+    const data = new FormData(form);
+    
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
 
-      const subject = `Inquiry from ${name}${company ? ' — ' + company : ''}`;
-      const body =
-`Name: ${name}
-Company / Production: ${company || '—'}
-Email: ${email}
-Phone: ${phone || '—'}
-
-Details:
-${details}`;
-
-      const mailtoLink = `mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      window.location.href = mailtoLink;
-      status.textContent = 'Opening your email app to send this inquiry…';
-    });
-  } */
+      if (response.ok) {
+        status.textContent = 'Thanks! Your inquiry has been sent.';
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        status.textContent = errorData.errors?.map(err => err.message).join(', ') || 'Something went wrong. Please try again.';
+      }
+    } catch (error) {
+      status.textContent = 'Network error. Please try again later.';
+    }
+  });
+}
 
 });
