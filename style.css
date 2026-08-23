@@ -599,6 +599,7 @@ h1, h2, h3, h4{
   overflow: hidden;
   position: relative;
   background: var(--charcoal-2);
+  grid-row: span 2;
 }
 .gallery-item:nth-child(3n+1){ grid-row: span 2; }
 .gallery-item img{
@@ -620,7 +621,7 @@ h1, h2, h3, h4{
 
 @media (max-width: 680px){
   .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
-  .gallery-item:nth-child(3n+1){ grid-row: span 2; }
+  .gallery-item:nth-child(3n+1){ grid-row: span 1; }
   .gallery-item:nth-child(odd){ grid-row: span 2; }
 }
 
