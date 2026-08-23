@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const status = document.getElementById('formStatus');
   const INQUIRY_EMAIL = 'luciouslawton@gmail.com';
 
-  if (form){
+  /*if (form){
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
@@ -116,6 +116,6 @@ ${details}`;
       window.location.href = mailtoLink;
       status.textContent = 'Opening your email app to send this inquiry…';
     });
-  }
+  } */
 
 });
