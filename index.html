@@ -21,8 +21,36 @@
 
   <link rel="stylesheet" href="style.css">
   <title>Lucious Lawton</title>
+
+  <!-- Schema.org structured data for search engine rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lucious Lawton",
+    "url": "https://luciouslawton.com",
+    "image": "https://luciouslawton.com/img/hero.jpg",
+    "jobTitle": ["Actor", "Singer"],
+    "description": "Lucious Lawton is an actor and singer working in film, television, and music.",
+    "sameAs": [
+      "https://instagram.com/luciouslawton",
+      "https://tiktok.com/@luciouslawton",
+      "https://twitter.com/luciouslawton"
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <!-- ============ Curtain intro (parts on load) ============ -->
+  <div class="curtain curtain--left" id="curtainLeft" aria-hidden="true"></div>
+  <div class="curtain curtain--right" id="curtainRight" aria-hidden="true"></div>
+
+  <!-- ============ Scroll progress bar ============ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ Custom cursor ============ -->
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
   <!-- ============ Ambient grain / vignette layer ============ -->
   <div class="grain" aria-hidden="true"></div>
@@ -38,6 +66,8 @@
 
   <!-- ============ Full screen drawer nav ============ -->
   <nav class="site-nav" id="siteNav" aria-hidden="true">
+    <img class="site-nav__logo" id="navLogo" src="img/nav-logo.jpg" alt="Lucious Lawton logo">
+
     <ul class="site-nav__links">
       <li><a href="#home" data-nav-link>Home</a></li>
       <li><a href="#reel" data-nav-link>Film &amp; Television</a></li>
@@ -120,6 +150,17 @@
         <h2>In Studio</h2>
       </div>
 
+      <!--
+        EDIT: once a track/playlist is live, go to the track on Spotify > Share > Embed track,
+        copy the <iframe> Spotify gives you, and paste it inside .music-embed below
+        (delete this comment and the placeholder note once it's in).
+      -->
+      <div class="music-embed reveal-up">
+        <!--
+        <iframe style="border-radius:10px" src="https://open.spotify.com/embed/track/YOUR_TRACK_ID?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        -->
+      </div>
+
       <!-- EDIT: duplicate .track-card for each release. Cover art goes in img/music/ -->
       <div class="track-list">
         <a class="track-card reveal-up" href="#" target="_blank" rel="noopener">
@@ -143,6 +184,30 @@
 
       <p class="section__note reveal-up">Releases coming soon &mdash; follow along on Instagram and TikTok.</p>
     </section>
+
+    <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
+
+    <!-- ============ SOCIAL FEED ============ -->
+    <section class="section" id="feed">
+      <div class="section__head reveal-up">
+        <p class="eyebrow">Follow Along</p>
+        <h2>Latest on TikTok</h2>
+      </div>
+
+      <div class="feed-embed reveal-up">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@luciouslawton" data-unique-id="luciouslawton" data-embed-type="creator" style="max-width: 780px;min-width: 288px;">
+          <section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@luciouslawton">@luciouslawton on TikTok</a></section>
+        </blockquote>
+      </div>
+
+      <!--
+        EDIT (optional): to also show a live Instagram grid, sign up free at lightwidget.com,
+        connect the @luciouslawton Instagram account, then paste the <iframe> it gives you
+        inside a div.feed-embed right here.
+      -->
+    </section>
+
+    <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
 
     <!-- ============ QUOTE ============ -->
     <section class="quote-panel">
@@ -244,6 +309,22 @@
     <p class="footer-copy">&copy; <span id="year"></span> Lucious Lawton. All rights reserved.</p>
   </footer>
 
+  <!-- ============ Gallery lightbox ============ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next photo"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <!-- ============ Ambient sound toggle ============ -->
+  <!-- EDIT: drop an instrumental mp3 at audio/ambient.mp3 to activate this -->
+  <button class="sound-toggle" id="soundToggle" aria-pressed="false" aria-label="Toggle ambient sound">
+    <i class="fas fa-volume-mute" id="soundIcon"></i>
+  </button>
+  <audio id="ambientAudio" src="audio/ambient.mp3" loop preload="none"></audio>
+
   <script src="script.js"></script>
+  <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
