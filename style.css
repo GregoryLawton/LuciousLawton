@@ -251,11 +251,11 @@ body.curtain-lock{ overflow: hidden; }
 
 .site-nav__logo{
   position: absolute;
-  top: 4rem;
+  top: 2.1rem;
   left: 50%;
   transform: translateX(-50%);
-  height: 90px;
-  width: auto;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 0 1px rgba(184,147,62,.4);
