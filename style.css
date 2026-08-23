@@ -276,6 +276,13 @@ h1, h2, h3, h4{
   justify-content: center;
   overflow: hidden;
 }
+.hero__ambient{
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 38%, rgba(140,28,43,.55), transparent 68%),
+    radial-gradient(ellipse 80% 70% at 50% 60%, var(--velvet), var(--void) 75%);
+}
 .hero__image{
   position: absolute;
   inset: 0;
@@ -284,6 +291,8 @@ h1, h2, h3, h4{
   background-position: center 20%;
   transform: scale(1.08);
   animation: hero-settle 2.4s var(--ease) forwards;
+  -webkit-mask-image: radial-gradient(ellipse 62% 62% at 50% 42%, black 45%, transparent 88%);
+  mask-image: radial-gradient(ellipse 62% 62% at 50% 42%, black 45%, transparent 88%);
 }
 @keyframes hero-settle{
   from{ transform: scale(1.14); filter: saturate(.7) brightness(.7); }
