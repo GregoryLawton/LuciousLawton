@@ -94,13 +94,17 @@ h1, h2, h3, h4{
    ========================================================= */
 .wordmark-mini{
   position: fixed;
-  top: 1.6rem;
+  top: 1.35rem;
   left: 4.4rem;
+  height: 44px;
   z-index: 300;
+  display: flex;
+  align-items: center;
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
   font-size: .78rem;
+  line-height: 1;
   letter-spacing: .18em;
   color: var(--ivory-dim);
   pointer-events: none;
@@ -414,6 +418,8 @@ h1, h2, h3, h4{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 340px;
+  margin: 0 auto;
 }
 .reel-card{
   background: var(--charcoal);
