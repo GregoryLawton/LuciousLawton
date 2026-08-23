@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   --------------------------------------------------------- */
   const form = document.getElementById('inquireForm');
   const status = document.getElementById('formStatus');
-  const INQUIRY_EMAIL = 'LuciousLawton@gmail.com';
+  const INQUIRY_EMAIL = 'luciouslawton@gmail.com';
 
   if (form){
     form.addEventListener('submit', (e) => {
