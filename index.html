@@ -90,7 +90,6 @@
     <ul class="site-nav__links">
       <li><a href="#home" data-nav-link>Home</a></li>
       <li><a href="#music" data-nav-link>Music</a></li>
-      <li><a href="#latest" data-nav-link>Latest</a></li>
       <li><a href="#reel" data-nav-link>Film &amp; Television</a></li>
       <li><a href="#press" data-nav-link>Press Kit</a></li>
       <li><a href="#gallery" data-nav-link>Gallery</a></li>
@@ -181,31 +180,6 @@
       </div>
 
       <p class="section__note reveal-up">Releases coming soon &mdash; follow along on Instagram and TikTok.</p>
-    </section>
-
-    <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
-
-    <!-- ============ LATEST / NEWS ============ -->
-    <section class="section" id="latest">
-      <div class="section__head reveal-up">
-        <p class="eyebrow">Updates</p>
-        <h2>Latest</h2>
-      </div>
-
-      <!-- EDIT: add a new .news-card for each update, newest first. Delete the placeholder card once you have real news to replace it with. -->
-      <div class="news-list">
-        <article class="news-card reveal-up">
-          <p class="news-card__date">August 2026</p>
-          <h3 class="news-card__title">New Official Website</h3>
-          <p class="news-card__body">The new home for music, film &amp; television, and booking is officially live. Explore everything here and stay tuned for what's coming next.</p>
-        </article>
-
-        <article class="news-card reveal-up">
-          <p class="news-card__date">EDIT: Month Year</p>
-          <h3 class="news-card__title">EDIT: Your next update</h3>
-          <p class="news-card__body">EDIT: A track release, a show date, a behind-the-scenes note &mdash; anything fans should know. Delete this card if you don't have an update yet.</p>
-        </article>
-      </div>
     </section>
 
     <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
@@ -433,25 +407,6 @@
   </main>
 
   <footer class="site-footer">
-    <div class="newsletter">
-      <p class="newsletter__label">Stay in the loop</p>
-      <p class="newsletter__note">New music, show dates, and updates &mdash; no spam.</p>
-      <!-- EDIT: this posts to the same Formspree endpoint as the Inquire form, tagged with
-           a custom subject line so signups are easy to tell apart in your inbox. If you'd
-           rather keep a separate list, create a second form at formspree.io and swap the
-           action URL below. -->
-      <form action="https://formspree.io/f/mzepwldw" method="POST" class="ajax-form newsletter__form" data-success-message="You're on the list!">
-        <input type="hidden" name="_subject" value="New newsletter signup">
-        <input type="hidden" name="form_type" value="Newsletter Signup">
-        <label for="newsletterEmail" class="sr-only">Email address</label>
-        <input type="email" id="newsletterEmail" name="email" placeholder="Your email" required>
-        <button type="submit" class="btn-gold btn-gold--sm">
-          <span>Subscribe</span>
-        </button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-
     <div class="bulb-rule" aria-hidden="true"></div>
     <p class="wordmark-mini wordmark-mini--footer">LUCIOUS LAWTON</p>
     <ul class="footer-social">
