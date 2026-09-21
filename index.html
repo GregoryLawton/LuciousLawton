@@ -90,7 +90,7 @@
     <ul class="site-nav__links">
       <li><a href="#home" data-nav-link>Home</a></li>
       <li><a href="#music" data-nav-link>Music</a></li>
-      <li><a href="#reel" data-nav-link>Film &amp; Television</a></li>
+      <!-- <li><a href="#reel" data-nav-link>Film &amp; Television</a></li> -->
       <li><a href="#press" data-nav-link>Press Kit</a></li>
       <li><a href="#gallery" data-nav-link>Gallery</a></li>
       <li><a href="#inquire" data-nav-link>Inquire</a></li>
@@ -128,10 +128,21 @@
         <span class="reveal" style="--d:1">Lucious</span>
         <span class="reveal hero__title--em" style="--d:2">Lawton</span>
       </h1>
-      <p class="hero__tagline reveal" style="--d:3">On screen & In the booth.</p>
+      <ul class="hero__socials reveal" style="--d:3">
+        <li><a href="https://instagram.com/luciouslawton" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li>
+          <a href="https://tiktok.com/@luciouslawton" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="1em" height="1em" viewBox="0 0 448 512" fill="currentColor" style="display:inline-block; vertical-align:-0.125em;">
+              <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
+            </svg>
+          </a>
+        </li>
+        <li><a href="https://twitter.com/luciouslawton" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://youtube.com/@luciouslawton" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+      </ul>
     </div>
 
-    <a href="#reel" class="scroll-cue" aria-label="Scroll to content">
+    <a href="#music" class="scroll-cue" aria-label="Scroll to content">
       <span></span>
     </a>
   </header>
@@ -160,7 +171,7 @@
 
       <!-- EDIT: duplicate .track-card for each release. Cover art goes in img/music/ -->
       <div class="track-list">
-        <a class="track-card reveal-up" href="#" target="_blank" rel="noopener">
+        <a class="track-card reveal-up" href="coming-soon.html">
           <div class="track-card__art" style="background-image:url('img/music/release-1.jpg');"></div>
           <div class="track-card__info">
             <h3>Vibes</h3>
@@ -169,6 +180,7 @@
           <span class="track-card__play"><i class="fas fa-play"></i></span>
         </a>
 
+        <!-- EDIT: commented out until the EP is closer to release
         <a class="track-card reveal-up" href="#" target="_blank" rel="noopener">
           <div class="track-card__art" style="background-image:url('img/music/release-2.jpg');"></div>
           <div class="track-card__info">
@@ -177,6 +189,27 @@
           </div>
           <span class="track-card__play"><i class="fas fa-play"></i></span>
         </a>
+        -->
+      </div>
+
+      <!-- EDIT: once each platform link is live, swap coming-soon.html for the real profile/track URL on that line -->
+      <div class="platform-links-wrap reveal-up">
+        <p class="platform-links__label">Stream Everywhere</p>
+        <ul class="platform-links">
+          <li><a href="coming-soon.html" aria-label="Listen on Spotify"><i class="fab fa-spotify"></i></a></li>
+          <li><a href="coming-soon.html" aria-label="Listen on Apple Music"><i class="fab fa-itunes-note"></i></a></li>
+          <li>
+            <a href="coming-soon.html" aria-label="Listen on Tidal">
+              <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:-0.125em;">
+                <path d="M12 3.5 14.5 6 12 8.5 9.5 6 12 3.5Z"/>
+                <path d="M7 8.5 9.5 11 7 13.5 4.5 11 7 8.5Z"/>
+                <path d="M17 8.5 19.5 11 17 13.5 14.5 11 17 8.5Z"/>
+                <path d="M12 13.5 14.5 16 12 18.5 9.5 16 12 13.5Z"/>
+              </svg>
+            </a>
+          </li>
+          <li><a href="coming-soon.html" aria-label="Listen on YouTube Music"><i class="fab fa-youtube"></i></a></li>
+        </ul>
       </div>
 
       <p class="section__note reveal-up">Releases coming soon &mdash; follow along on Instagram and TikTok.</p>
@@ -185,23 +218,13 @@
     <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
 
     <!-- ============ FILM & TELEVISION ============ -->
+<!--
     <section class="section" id="reel">
       <div class="section__head reveal-up">
         <p class="eyebrow">Filmography</p>
         <h2>On Screen</h2>
       </div>
 
-      <!--
-        EDIT: once a reel is live, paste the YouTube/Vimeo embed code below
-        (delete the placeholder comment once it's in). Example for YouTube:
-        <div class="reel-video">
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Demo Reel"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      -->
-
-      <!-- EDIT: duplicate .reel-card for each additional project. Poster art goes in img/reel/ -->
       <div class="reel-grid">
         <article class="reel-card reveal-up">
           <div class="reel-card__poster" style="background-image:url('img/reel/project-1.jpg');">
@@ -217,6 +240,7 @@
     </section>
 
     <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
+-->
 
     <!-- ============ PRESS KIT ============ -->
     <section class="section" id="press">
@@ -314,19 +338,19 @@
       <!-- EDIT: drop photos into img/gallery/ and update the filenames below (add or remove figures freely) -->
       <div class="gallery-grid">
         <figure class="gallery-item reveal-up"><img src="img/gallery/02.jpg" alt="" loading="lazy"></figure>
-        <figure class="gallery-item reveal-up"><img src="img/gallery/04.jpg" alt="" loading="lazy"></figure>
         <figure class="gallery-item reveal-up"><img src="img/gallery/03.jpg" alt="" loading="lazy"></figure>
         <figure class="gallery-item reveal-up"><img src="img/gallery/06.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-item reveal-up"><img src="img/gallery/07.jpg" alt="" loading="lazy"></figure>
       </div>
     </section>
 
     <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
 
     <!-- ============ SOCIAL FEED ============ -->
-<!--   <section class="section" id="feed">
+   <section class="section" id="feed">
       <div class="section__head reveal-up">
         <p class="eyebrow">Follow Along</p>
-        <h2>Latest on TikTok</h2>
+        <h2>Latest on Socials</h2>
       </div>
 
       <div class="feed-embed reveal-up">
@@ -334,16 +358,16 @@
           <section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@luciouslawton">@luciouslawton on TikTok</a></section>
         </blockquote>
       </div>
-    -->
+    
       <!--
         EDIT (optional): to also show a live Instagram grid, sign up free at lightwidget.com,
         connect the @luciouslawton Instagram account, then paste the <iframe> it gives you
         inside a div.feed-embed right here.
       -->
-<!--    </section>
+  </section>
 
     <div class="bulb-rule bulb-rule--section" aria-hidden="true"></div>
-  -->
+
     <!-- ============ INQUIRE ============ -->
     <section class="section section--inquire" id="inquire">
       <div class="section__head reveal-up">

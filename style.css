@@ -429,11 +429,38 @@ body.curtain-lock{ overflow: hidden; }
   font-weight: 500;
   color: var(--gold-bright);
 }
-.hero__tagline{
-  margin-top: 1.4rem;
-  font-size: clamp(.95rem, 2vw, 1.15rem);
-  letter-spacing: .04em;
-  color: var(--ivory-dim);
+.hero__socials{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: .7rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+}
+.hero__socials a{
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ivory);
+  font-size: .9rem;
+  background: rgba(6,0,0,.35);
+  border: 1px solid rgba(230,200,119,.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 18px rgba(0,0,0,.35);
+  transition: all .3s var(--ease);
+}
+.hero__socials a:hover{
+  background: var(--gold);
+  color: var(--void);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+@media (max-width: 480px){
+  .hero__socials a{ width: 34px; height: 34px; font-size: .82rem; }
+  .hero__socials{ gap: .55rem; }
 }
 
 .scroll-cue{
@@ -512,6 +539,42 @@ body.curtain-lock{ overflow: hidden; }
   font-size: .9rem;
   margin-top: 2.5rem;
   letter-spacing: .02em;
+}
+
+.platform-links-wrap{
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.platform-links__label{
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 1rem;
+}
+.platform-links{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: .9rem;
+  margin: 0;
+  padding: 0;
+}
+.platform-links a{
+  width: 42px; height: 42px;
+  border: 1px solid rgba(184,147,62,.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1rem;
+  transition: all .3s var(--ease);
+}
+.platform-links a:hover{
+  background: var(--gold);
+  color: var(--void);
+  transform: translateY(-3px);
 }
 
 /* =========================================================
@@ -1168,4 +1231,48 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visib
 }
 @media (prefers-reduced-motion: reduce){
   .logo-flourish, .confetti-piece{ display: none; }
+}
+
+/* =========================================================
+   Coming Soon — music platform placeholder page
+   ========================================================= */
+body.coming-soon-page{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 15%, rgba(140,28,43,.4), transparent 60%),
+    var(--void);
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+.coming-soon{
+  max-width: 560px;
+}
+.coming-soon__logo{
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.75rem;
+  box-shadow: 0 0 0 1px rgba(184,147,62,.4);
+}
+.coming-soon__title{
+  font-size: clamp(2.1rem, 6vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0 0 1.1rem;
+}
+.coming-soon__title span{
+  font-style: italic;
+  color: var(--gold-bright);
+}
+.coming-soon__text{
+  color: var(--ivory-dim);
+  font-size: 1rem;
+  max-width: 440px;
+  margin: 0 auto 2.25rem;
+}
+.coming-soon__socials{
+  margin: 0 0 2.25rem;
 }
