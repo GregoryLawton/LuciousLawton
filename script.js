@@ -4,6 +4,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------------------------------------------------------
+     Theme switch — dark (default) / light, remembered per visitor
+  --------------------------------------------------------- */
+  const root        = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const themeMeta   = document.querySelector('meta[name="theme-color"]');
+  const THEME_COLORS = { dark: '#0a0705', light: '#f4f7fb' };
+
+  function applyTheme(theme, save){
+    root.setAttribute('data-theme', theme);
+    if (themeMeta) themeMeta.setAttribute('content', THEME_COLORS[theme]);
+    if (themeToggle) themeToggle.setAttribute('aria-checked', String(theme === 'light'));
+    if (save){
+      try { localStorage.setItem('ll-theme', theme); } catch (e) {}
+    }
+  }
+  applyTheme(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark', false);
+
+  if (themeToggle){
+    themeToggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      if (document.startViewTransition && !reducedMotion){
+        document.startViewTransition(() => applyTheme(next, true));
+      } else {
+        applyTheme(next, true);
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------
      Curtain intro — parts like a theater curtain on load
   --------------------------------------------------------- */
   const curtainLeft  = document.getElementById('curtainLeft');
@@ -172,7 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let resetTimer = null;
 
     function spawnConfetti(x, y){
-      const colors = ['#e6c877', '#b8933e', '#ece4d3'];
+      const colors = root.getAttribute('data-theme') === 'light'
+        ? ['#2f5f9a', '#4f86c6', '#b9d2f0']
+        : ['#e6c877', '#b8933e', '#ece4d3'];
       const flourish = document.createElement('div');
       flourish.className = 'logo-flourish';
       flourish.style.left = `${x}px`;

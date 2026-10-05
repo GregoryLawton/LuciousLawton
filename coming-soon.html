@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -16,6 +16,16 @@
   <meta name="robots" content="noindex">
   <meta name="description" content="New music from Lucious Lawton is on the way. Follow along on socials for updates.">
   <meta name="theme-color" content="#0a0705">
+  <script>
+    /* Apply saved theme before first paint (dark is the default) */
+    (function(){
+      var t = 'dark';
+      try { var s = localStorage.getItem('ll-theme'); if (s === 'light' || s === 'dark') t = s; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute('content', t === 'light' ? '#f4f7fb' : '#0a0705');
+    })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

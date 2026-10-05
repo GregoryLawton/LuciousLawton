@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -15,6 +15,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Lucious Lawton is an actor and singer working across film, television, and music, bringing storytelling and sound together in every project.">
   <meta name="theme-color" content="#0a0705">
+  <script>
+    /* Apply saved theme before first paint (dark is the default) */
+    (function(){
+      var t = 'dark';
+      try { var s = localStorage.getItem('ll-theme'); if (s === 'light' || s === 'dark') t = s; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute('content', t === 'light' ? '#f4f7fb' : '#0a0705');
+    })();
+  </script>
 
   <!-- Open Graph / social link previews (iMessage, Facebook, etc.) -->
   <meta property="og:type" content="website">
@@ -111,14 +121,25 @@
       <li><a href="https://twitter.com/luciouslawton" target="_blank" rel="noopener" aria-label="Lucious Lawton on Twitter"><i class="fab fa-twitter"></i></a></li>
       <li><a href="https://youtube.com/@luciouslawton" target="_blank" rel="noopener" aria-label="Lucious Lawton on YouTube"><i class="fab fa-youtube"></i></a></li>
     </ul>
+
+    <!-- Light / dark mode switch -->
+    <div class="theme-toggle">
+      <span class="theme-toggle__label" id="themeLabel">Light mode</span>
+      <button type="button" class="theme-switch" id="themeToggle" role="switch" aria-checked="false" aria-labelledby="themeLabel">
+        <span class="theme-switch__thumb" aria-hidden="true">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </span>
+      </button>
+    </div>
   </nav>
   <div class="nav-scrim" id="navScrim"></div>
 
   <!-- ============ HERO ============ -->
   <header class="hero" id="home">
     <div class="hero__ambient" aria-hidden="true"></div>
-    <!-- EDIT: replace with your main intro photo at img/hero.jpg (portrait, min 1400px tall looks best) -->
-    <div class="hero__image" style="background-image:url('img/hero.jpg');"></div>
+    <!-- Hero photo is set per theme in style.css: img/hero.jpg = dark mode, img/hero-light.jpg = light mode -->
+    <div class="hero__image"></div>
     <div class="hero__spotlight" id="spotlight" aria-hidden="true"></div>
     <div class="hero__scrim"></div>
 
